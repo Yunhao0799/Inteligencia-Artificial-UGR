@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+
+<!-- inicio consulta simple sobre una serie-->
+<category>
+	<pattern>
+		de que va la serie *
+	</pattern>
+	
+	<template>
+		<srai>decode <map><name><star/></name>sinopsis</map></srai>
+	</template>
+</category>
+
+
+<category>
+	<pattern> De que va (la serie) <set>seriesnetflix</set></pattern>
+	
+	<template>
+		<srai>decode <map><name><star/></name>sinopsis</map></srai>
+	</template>
+
+</category>
+
+<category>
+	<pattern> De que va (la serie) <set>primevideo</set></pattern>
+	
+	<template>
+		<srai>decode <map><name><star/></name>sinopsis</map></srai>
+	</template>
+
+</category>
+
+<category>
+	<pattern> De que va (la serie) *</pattern>
+	
+	<template>
+		<think><set name="nombre_serie"><star/></set></think>
+		la serie <star/> no esta en el catalogo, quieres aniadirlo
+		<think><set name="topic">noExiste</set></think>
+	</template>
+	
+</category>
+<!-- fin consulta simple sobre una serie-->
+
+
+<!--no funciona condicional-->
+<topic name="noExiste">
+<category>
+	<pattern>[si no]</pattern>
+
+	<template>
+	<think><set var="respuesta"><star/></set></think>
+
+	<condition var="respuesta">
+		<li value="si">ok crea el fichero <get name="nombre_serie"/>.txt y reiniciame</li>
+		<li>recibido</li>
+	</condition>
+
+	</template>
+
+</category>
+
+</topic>
+
+<category>
+	<pattern>aniade la serie *</pattern>
+	
+	<template>
+	perfecto, te voy a preguntar datos sobre la serie <star/>. Indicame que plataforma la ofrece 
+	<think><set name="nombre_serie"><star/></set></think>
+	<think><set name="topic">plataforma</set></think>
+	</template>
+</category>
+
+
+<topic name="plataforma">
+<category>
+	<pattern>*</pattern>
+	
+	<template>
+		<think><set var="r"><star/></set></think>
+		<condition var="r">
+			<li value="netflix">
+				<addtoset>
+					<name>seriesnetflix</name>
+					<key>
+					<get name="nombre_serie"/>
+					</key>
+				</addtoset>
+			</li>
+			
+			<li>
+				<addtoset>
+					<name>primevideo</name>
+					<key>
+					<get name="nombre_serie"/>
+					</key>
+				</addtoset>
+			</li>
+		
+		</condition>
+		
+		a que genero pertenece
+		<think><set name="topic">genero</set></think>
+	</template>
+	
+</category>
+</topic>
+
+
+<topic name="genero">
+<category>
+	<pattern>*</pattern>
+	
+	<template>
+		<addtomap>
+			<name><get name="nombre_serie"/></name>
+			<key>genero</key>
+			<value><star/></value>
+		</addtomap>
+		de que va la serie
+		<think><set name="topic">de_que_va</set></think>
+	</template>
+</category>
+</topic>
+
+<topic name="de_que_va">
+<category>
+	<pattern>
+	*
+	</pattern>
+	
+	<template>
+		<addtomap>
+			<name><get name="nombre_serie"/></name>
+			<key>sinopsis</key>
+			<value><srai>code <star/></srai></value>
+		</addtomap>
+		
+		dime la lista de idiomas en los que está disponible el audio de la serie 
+		
+		<think><set name="topic">lang</set></think>
+	</template>
+</category>
+
+</topic>
+
+<topic name="lang">
+<category>
+	<pattern>*</pattern>
+	
+	<template>
+		<addtomap>
+			<name><get name="nombre_serie"/></name>
+			<key>idiomas</key>
+			<value><srai>code <star/></srai></value>
+		</addtomap>
+		
+		dime la lista de subtitulos en los que está disponible la serie
+		<think><set name="topic">subs</set></think>
+	</template>
+</category>
+</topic>
+
+<topic name="subs">
+<category>
+	<pattern>*</pattern>
+	
+	<template>
+		<addtomap>
+			<name><get name="nombre_serie"/></name>
+			<key>subtitulos</key>
+			<value><srai>code <star/></srai></value>
+		</addtomap>
+		
+		si conoces una direccion web de la serie indicamela 		
+		<think><set name="topic">web</set></think>
+	</template>
+</category>
+</topic>
+
+<topic name="web">
+<category>
+	<pattern>*</pattern>
+
+	<template>
+		<addtomap>
+			<name><get name="nombre_serie"/></name>
+			<key>web</key>
+			<value><srai>code <star/></srai></value>
+		</addtomap>
+		ya he creado la informacion basica de la serie, si quieres añadir capitulos di: Anade un nuevo capitulo de la temporada (numero) de (la serie)
+		<think><set name="topic">unknown</set></think>
+	</template>
+
+
+</category>
+</topic>
+
+
+
+
+</aiml>

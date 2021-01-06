@@ -1,0 +1,9 @@
+/home/yunhi/MEGAsync/Ingeniería Informática/2o/Segundo Cuatrimestre/Inteligencia Artificial/Practicas/Practica 2/practica2/CMakeFiles/rebuild_cache.dir
+/home/yunhi/MEGAsync/Ingeniería Informática/2o/Segundo Cuatrimestre/Inteligencia Artificial/Practicas/Practica 2/practica2/CMakeFiles/edit_cache.dir
+/home/yunhi/MEGAsync/Ingeniería Informática/2o/Segundo Cuatrimestre/Inteligencia Artificial/Practicas/Practica 2/practica2/CMakeFiles/BelkanSG.dir
+/home/yunhi/MEGAsync/Ingeniería Informática/2o/Segundo Cuatrimestre/Inteligencia Artificial/Practicas/Practica 2/practica2/CMakeFiles/GLUILib.dir
+/home/yunhi/MEGAsync/Ingeniería Informática/2o/Segundo Cuatrimestre/Inteligencia Artificial/Practicas/Practica 2/practica2/CMakeFiles/Belkan.dir
+/home/yunhi/MEGAsync/Ingeniería Informática/2o/Segundo Cuatrimestre/Inteligencia Artificial/Practicas/Practica 2/practica2/CMakeFiles/obj3DLib.dir
+/home/yunhi/MEGAsync/Ingeniería Informática/2o/Segundo Cuatrimestre/Inteligencia Artificial/Practicas/Practica 2/practica2/CMakeFiles/motorLib.dir
+/home/yunhi/MEGAsync/Ingeniería Informática/2o/Segundo Cuatrimestre/Inteligencia Artificial/Practicas/Practica 2/practica2/CMakeFiles/modelosBelkanLib.dir
+/home/yunhi/MEGAsync/Ingeniería Informática/2o/Segundo Cuatrimestre/Inteligencia Artificial/Practicas/Practica 2/practica2/CMakeFiles/comportamientosLib.dir

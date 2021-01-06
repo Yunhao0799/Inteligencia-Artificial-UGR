@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+
+<!-- proceso para incluir una nueva serie usando topicos-->
+
+<category>
+	<pattern>Anade un nuevo capitulo * la temporada <set>number</set> de *</pattern>
+
+	<template> 
+		<!-- operaciones para verificar que existe lo que se pide-->
+		<think><set name="serie"><star index="2"></star></set></think>
+		<think>
+		<set name="temporada">temporada<star index="1"></star></set>
+		<set name="topic">titcap</set>
+		</think>
+			dime el titulo del capitulo
+	
+	
+	</template>
+</category>
+
+<topic name ="titcap">
+
+<!--pide titulo del capitulo-->
+
+<category>
+	<pattern>*</pattern>
+	<template>
+		<think>
+		<set name="titulo"><star/></set>
+		<set name="topic">durcap</set>
+		</think>
+			dime la duracion del capitulo
+	</template>
+
+</category>
+
+</topic>
+
+<!-- se activa el siguiente tema cuando se habla sobre la duracion de los capitulos-->
+<topic name="durcap">
+<category>
+	<pattern><set>number</set></pattern>
+	
+	<template>
+		<think>
+		<set name="duracion"><star/></set>
+		<set name="topic">unknown</set>
+		
+		<set var="previos"><map><name><get name="serie"/></name><get name="temporada"/></map></set></think>
+		<!--modificacion del mapa-->
+		<modifymap>
+			<name><get name="serie"/></name>
+			<key><get name="temporada"/></key>
+			<value><srai>code <get var="previos"/>@<get name="titulo"/>@<get name="duracion"/></srai></value>
+		</modifymap>
+		
+		<!--una vez terminado de modificar el mapa dice lo siguiente-->
+		este capitulo ya esta disponible en la plataforma
+	</template>
+</category>
+</topic>
+
+
+</aiml>
+
+

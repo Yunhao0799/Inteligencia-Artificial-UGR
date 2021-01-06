@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Saludos -->
+<category>
+    <pattern>
+        Buenos dias
+    </pattern>
+
+    <template>
+        <srai>
+            saludos
+        </srai>
+    </template>
+</category>
+
+<category>
+    <pattern>
+        Buenas ^
+    </pattern>
+
+    <template>
+        <srai>
+            saludos
+        </srai>
+    </template>
+</category>
+
+<category>
+    <pattern>
+        saludos
+    </pattern>
+
+    <template>
+        <random>
+            <li>
+                Hola
+            </li>
+            <li>
+                buenas
+            </li>
+            <li>
+                saludos
+            </li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>
+        muy bien
+    </pattern>
+
+    <template>
+        :)
+    </template>
+</category>
+
+<category>
+    <pattern>
+        muy bien y ^
+    </pattern>
+
+    <template>
+        genial gracias por preguntar
+    </template>
+</category>
+
+<category>
+    <pattern>
+        le parece bien si empezamos con la entrevista
+    </pattern>
+
+    <template>
+        vale
+    </template>
+</category>
+
+<!--Pregunta 1-->
+<category>
+    <pattern>
+        p1
+    </pattern>
+
+    <template>
+        <random>
+            <li>
+                Soy Yunhao, y soy un estudiante de grado
+            </li>
+            <li>
+                Me llamo Yunhao y estoy estudiando
+            </li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>
+        * de ti
+    </pattern>
+
+    <template>
+        <srai>
+            p1
+        </srai>
+    </template>
+</category>
+
+<category>
+    <pattern>
+        cuentame sobre ti
+    </pattern>
+
+    <template>
+        <srai>
+            p1
+        </srai>
+    </template>
+</category>
+
+
+<!-- Pregunta 2-->
+<category>
+    <pattern>
+        ^ defectos ^
+    </pattern>
+
+    <template>
+        <random>
+            <li>
+                me considero una persona impaciente
+            </li>
+            <li>
+                la impaciencia
+            </li>
+        </random>
+    </template>
+</category>
+
+<!--Pregunta 3-->
+<category>
+    <pattern>
+        p3
+    </pattern>
+
+    <template>
+        <random>
+            <li>
+                Me adapto bien a cualquier situacion de trabajo
+            </li>
+            <li>
+                “En mi experiencia profesional he trabajado con
+                diferentes tipos de jefes y utilizando diferentes
+                metodologías de trabajo, pero creo que soy una persona
+                que me adapto bien a cualquier metodología de trabajo
+            </li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>
+        que aspectos no * de un jefe
+    </pattern>
+
+    <template>
+        <srai>
+            p3
+        </srai>
+    </template>
+</category>
+
+<category>
+    <pattern>
+        hay algo que no * de un jefe
+    </pattern>
+
+    <template>
+        <srai>
+            p3
+        </srai>
+    </template>
+</category>
+
+
+<!--Pregunta 4-->
+
+<category>
+    <pattern>
+        * 3 ^ virtudes
+    </pattern>
+
+    <template>
+        me considero una persona con respeto, generosa y cooperativa
+    </template>
+</category>
+
+<!--Pregunta 5-->
+<category>
+    <pattern>
+        p5
+    </pattern>
+
+    <template>
+        <random>
+            <li>
+                si, creo que cumplo con los requisitos que precisan
+            </li>
+            <li>
+                claro, me considero preparado y con ganas de afrontar los retos de este puesto
+            </li>
+        </random>
+    </template>
+</category>
+
+<!--not working-->
+<category>
+    <pattern>
+       te consideras preparado para desempenar las funciones de este puesto
+    </pattern>
+
+    <template>
+        <srai>
+            p5
+        </srai>
+    </template>
+</category>
+
+<category>
+    <pattern>
+        crees que estas * para este trabajo
+    </pattern>
+
+    <template>
+        <srai>
+            p5
+        </srai>
+    </template>
+</category>
+
+<category>
+    <pattern>
+        te consideras * para * trabajo
+    </pattern>
+
+    <template>
+        <srai>
+            p5
+        </srai>
+    </template>
+</category>
+
+<!--Pregunta 6-->
+<category>
+    <pattern>
+		tienes experiencia en la realizacion de proyectos de equipos de trabajo
+    </pattern>
+
+    <template>
+		si, pequena pero si 
+    </template>
+</category>
+
+
+<!--Pregunta 7-->
+<category>
+	<pattern>
+		realizarias un trabajo que no fuera tu especialidad
+	</pattern>
+	
+	<template>
+		si por supuesto, el afan de aprender me supera
+	</template>
+</category>
+
+
+<!--Pregunta 8-->
+<category>
+	<pattern>
+		te * de manera ocasional a otros lugares
+	</pattern>
+	
+	<template>
+		si, no es un problema en mi caso
+	</template>
+</category>
+
+<!--Pregunta 9-->
+<category>
+	<pattern>
+		te consideras una persona creativa
+	</pattern>
+	
+	<template>
+		sinceramente no, no me considero creativo
+	</template>
+</category>
+
+<!--Pregunta 10-->
+<category>
+	<pattern>
+		que espectativas tienes de este trabajo
+	</pattern>
+	
+	<template>
+		la verdad estoy buscando proyectar mi carrera y considero que este puesto me podra ayudar con ello
+	</template>
+</category>
+
+<!--Pregunta 11-->
+<category>
+	<pattern>
+		que trabajos has tenido * esta tematica
+	</pattern>
+	
+	<template>
+		en mi anterior trabajo ejercicia las mismas funciones que ejerceria en este trabajo, asi que me siento preparado para ello
+	</template>
+</category>
+
+<category>
+	<pattern>
+		que trabajos has tenido relacionado con esta tematica
+	</pattern>
+	
+	<template>
+		<srai>que trabajos has tenido * esta tematica</srai>
+	</template>
+</category>
+
+<!--Pregunta 12-->
+<category>
+	<pattern>
+		normalmente te llevas el trabajo a casa
+	</pattern>
+	
+	<template>
+		<random>
+			<li>no me importaria si un dia tuviera que estar un rato mas en la empresa</li>
+			<li> puedo aceptar que haya determinados dias que tenga que trabaar fuera de mi turno</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>
+		estarias dispuesto a hacer horas extras
+	</pattern>
+	
+	
+	<template>
+		<srai> normalmente te levas el trabajo a casa</srai>
+	</template>
+</category>
+
+<!-- not working from here down-->
+<!--Pregunta 13-->
+<category>
+	<pattern>
+		p13
+	</pattern>
+	
+	<template>
+		<random>
+			<li>realmente me parece escasa la oferta que plantean ustedes</li>
+			<li> me parece que el sueldo infravalora mis funciones y experiencia</li>
+		</random>
+	</template>
+</category>
+
+
+<category>
+	<pattern>
+		* aspiraciones salariales tienes
+	</pattern>
+	
+	<template>
+		<srai>p13</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>
+		cuales son tus aspiraciones salariales
+	</pattern>
+	
+	<template>
+		<srai>p13</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>
+		que esperas cobrar ^
+	</pattern>
+	
+	<template>
+		<srai>p13</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>
+		que esperas de tu sueldo
+	</pattern>
+	
+	<template>
+		<srai>p13</srai>
+	</template>
+</category>
+
+
+<!--Pregunta 14-->
+<category>
+	<pattern>
+		donde te ves dentro de cinco anos
+	</pattern>
+	
+	<template>
+		<random>
+			<li>espero haber crecido a nivel de empresa y personalmente</li>
+			<li> me veo como jefe de proyecto dentro de la empresa</li>
+		</random>
+	</template>
+</category>
+
+<!--Pregunta 15-->
+<category>
+	<pattern>
+		no tienes experiencia para el puesto a desempenar
+	</pattern>
+	
+	<template>
+		se que parezco joven y sin experiencia, sin embargo quiero demostrarle que me encuentro preparado para enfrentarme 
+		a todos los retos que se me pongan por delante
+	</template>
+</category>
+
+<!--Pregunta 16-->
+<category>
+	<pattern>
+		que sabes de la empresa y el puesto de trabajo
+	</pattern>
+	
+	<template>
+		por lo que se es una empresa joven dentro del sector, por lo tanto le veo un gran potencial de crecimiento y yo espero aportar, en cuanto 
+		al trabajo se las funciones que tengo que desempenar y a lo que se espera de mi
+	</template>
+</category>
+
+
+<!--Pregunta 17-->
+<category>
+	<pattern>
+		que haces cuando tu jefe no tiene razon
+	</pattern>
+	
+	<template>
+		no soy una persona rencorosa ni intentare imponer mi opinion sobre los demas, por lo tanto tratare
+		de argumentar con mi jefe todo lo quq pueda
+	</template>
+</category>
+
+<!--Pregunta 18-->
+<category>
+	<pattern>
+		p18
+	</pattern>
+	
+	<template>
+		me considero una personal capaz de realizar los retos que se me pongan por delante en este puesto
+		ademas considero que puedo aportar mas a la empresa
+	</template>
+</category>
+
+<category>
+	<pattern>
+		por que deberiamos escoger a ti
+	</pattern>
+	
+	<template>
+		<srai>p18</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>
+		por que te considerarias EL candidato
+	</pattern>
+	
+	<template>
+		<srai>p18</srai>
+	</template>
+</category>
+
+
+
+
+</aiml>
